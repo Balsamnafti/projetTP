@@ -128,9 +128,9 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Black" size="12" style="1"/>
+                  <Font name="Lucida Bright" size="36" style="3"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="                                                    Vol Management"/>
+                <Property name="text" type="java.lang.String" value="   Vol Management"/>
               </Properties>
             </Component>
           </SubComponents>

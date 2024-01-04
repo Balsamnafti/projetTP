@@ -116,7 +116,6 @@ public class ajoutvol extends javax.swing.JFrame {
         jLabel8.setMaximumSize(new java.awt.Dimension(70, 16));
         jLabel8.setMinimumSize(new java.awt.Dimension(70, 16));
 
-        jTextField7.setText("jTextField7");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField7ActionPerformed(evt);

@@ -100,4 +100,8 @@ public class vol {
         this.heureArrivee = heureArrivee;
     }
 
+    public void add(vol vol) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 } 

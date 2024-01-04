@@ -53,8 +53,8 @@ public class volmanagement extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jLabel1.setText("                                                    Vol Management");
+        jLabel1.setFont(new java.awt.Font("Lucida Bright", 3, 36)); // NOI18N
+        jLabel1.setText("   Vol Management");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
