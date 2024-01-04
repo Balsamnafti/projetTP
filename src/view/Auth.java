@@ -225,7 +225,10 @@ public class Auth extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-       System.out.println("Clicked!");
+        String Login = login.getText();
+        String pwd = jPasswordField1.getText();
+       System.out.println("Login!"+Login);
+       System.out.println("pwd!"+pwd);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

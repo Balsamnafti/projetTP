@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Model;
+import java.time.LocalTime;
 import java.util.Date;
 /**
  *
@@ -12,22 +13,27 @@ public class vol {
      private Integer id;
      private String numvol,aerdepart,aerarrivee ;
      private Date datedep,datearr;
+     private LocalTime heureDepart;
+     private LocalTime heureArrivee;
 
-    public vol(Integer id, String numvol, String aerdepart, String aerarrivee, Date datedep, Date datearr) {
-        this.id = id;
+    public vol(String numvol, String aerdepart, String aerarrivee, Date datedep, Date datearr, LocalTime heureDepart, LocalTime heureArrivee) {
         this.numvol = numvol;
         this.aerdepart = aerdepart;
         this.aerarrivee = aerarrivee;
         this.datedep = datedep;
         this.datearr = datearr;
+        this.heureDepart = heureDepart;
+        this.heureArrivee = heureArrivee;
     }
 
-    public vol(String numvol, String aerdepart, String aerarrivee, Date datedep, Date datearr) {
+    public vol(Integer id, String numvol, String aerarrivee, Date datedep, Date datearr, LocalTime heureDepart, LocalTime heureArrivee) {
+        this.id = id;
         this.numvol = numvol;
-        this.aerdepart = aerdepart;
         this.aerarrivee = aerarrivee;
         this.datedep = datedep;
         this.datearr = datearr;
+        this.heureDepart = heureDepart;
+        this.heureArrivee = heureArrivee;
     }
 
     public Integer getId() {
@@ -77,6 +83,21 @@ public class vol {
     public void setDatearr(Date datearr) {
         this.datearr = datearr;
     }
- 
 
-}
+    public LocalTime getHeureDepart() {
+        return heureDepart;
+    }
+
+    public void setHeureDepart(LocalTime heureDepart) {
+        this.heureDepart = heureDepart;
+    }
+
+    public LocalTime getHeureArrivee() {
+        return heureArrivee;
+    }
+
+    public void setHeureArrivee(LocalTime heureArrivee) {
+        this.heureArrivee = heureArrivee;
+    }
+
+} 
