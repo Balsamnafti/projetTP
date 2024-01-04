@@ -4,6 +4,9 @@
  */
 package view;
 
+import Controller.UserController;
+import Model.User;
+
 /**
  *
  * @author balsa
@@ -227,8 +230,14 @@ public class Auth extends javax.swing.JFrame {
         // TODO add your handling code here:
         String Login = login.getText();
         String pwd = jPasswordField1.getText();
-       System.out.println("Login!"+Login);
-       System.out.println("pwd!"+pwd);
+      
+       UserController uc = new UserController();
+       User u = uc.findByLoginPwd(Login,pwd);
+      if( u==null){
+          System.out.println(" User not found!");
+      }else{
+          System.out.println("User found!");
+      }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

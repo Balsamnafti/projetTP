@@ -11,7 +11,8 @@ package Model;
 public class User {
     private Integer id;
     private String firstname , lastname, login , pwd ;
-
+  public User() {}
+        
     public User(Integer id, String firstname, String lastname, String login, String pwd) {
         this.id = id;
         this.firstname = firstname;
