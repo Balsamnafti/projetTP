@@ -4,10 +4,13 @@
  */
 package Controller;
 import Model.vol;
+import java.sql.*;
+import configs.crude;
 import java.time.LocalTime;
-    import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,20 +25,21 @@ public class VolController {
         vols = new ArrayList<>(); // Initialisation de la liste des vols
     }
 
-    // Méthode pour ajouter un vol à la liste
-    public void ajouterVol(String numvol, String aerdepart, String aerarrivee, Date datedep, Date datearr, LocalTime heureDepart, LocalTime heureArrivee) {
-        vol newVol = new vol(numvol, aerdepart, aerarrivee, datedep, datearr, heureDepart, heureArrivee);
-        vols.add(newVol); // Ajout du vol à la liste
+    private crude crude = new crude();
+
+    public boolean insert(vol e) {
+        try {
+            String sql = "INSERT INTO vol(numvol,aerarrivee,dadtedep,datearr,heureDepart,heureArrivee) VALUES ('"
+                    + e.getNumvol() + "','" + e.getAerarrivee() + "','" + e.getDatedep() + "','" + e.getDatearr() + "','"
+                    + e.getHeureDepart() + "','" + e.getHeureArrivee() + "')";
+            System.out.println(sql);
+            return crude.exeInsert(sql);
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Erreur  ", "Erreur ", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
     }
 
-    // Méthode pour récupérer tous les vols
-    public ArrayList<vol> getVols() {
-        return vols;
-    }
-
-    // Méthode pour supprimer un vol de la liste
-    public void supprimerVol(vol vol) {
-        vols.remove(vol);
-    }
-
-}
+   

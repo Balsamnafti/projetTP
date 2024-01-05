@@ -15,7 +15,7 @@ public class vol {
      private Date datedep,datearr;
      private LocalTime heureDepart;
      private LocalTime heureArrivee;
-public vol() {}
+public vol(String numeroVol, String aeroportDepart, String aeroportArrivee, String dateDepart, String dateArrivee, String heureDepart1, String heureArrivee1) {}
         
     
     public vol(String numvol, String aerdepart, String aerarrivee, Date datedep, Date datearr, LocalTime heureDepart, LocalTime heureArrivee) {

@@ -258,9 +258,8 @@ public class ajoutvol extends javax.swing.JFrame {
        
     
    VolController volC = new VolController();
-   vol newflight = new vol(numeroVol, aeroportDepart,aeroportArrivee,dateDepart,dateArrivee,heureDepart,heureArrivee);
-   volC.insert(newflight)
-    
+    vol newflight = new vol(numeroVol, aeroportDepart, aeroportArrivee, dateDepart, dateArrivee, heureDepart, heureArrivee);
+    volC.insert(newflight);
     
     System.out.println("Numéro de Vol : " + numeroVol);
     System.out.println("Aéroport de Départ : " + aeroportDepart);
