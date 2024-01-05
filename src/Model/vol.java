@@ -15,7 +15,9 @@ public class vol {
      private Date datedep,datearr;
      private LocalTime heureDepart;
      private LocalTime heureArrivee;
-
+public vol() {}
+        
+    
     public vol(String numvol, String aerdepart, String aerarrivee, Date datedep, Date datearr, LocalTime heureDepart, LocalTime heureArrivee) {
         this.numvol = numvol;
         this.aerdepart = aerdepart;

@@ -23,7 +23,7 @@ public class UserController {
         String sql =  "INSERT INTO user(login, password) VALUES ('"
                 + e.getLogin()+ "','" +e.getPwd()+ "')";
         System.out.println(sql);
-        return crude.exeInsert(sql);    
+        return crude.exeInsert(sql);   
     }
     
     public boolean update(int id, User e) {
@@ -39,22 +39,29 @@ public class UserController {
         return crude.exeDelete(sql);    
     }
        
-    public ArrayList<User> getall() {
-        try{
-        String sql = "SELECT *  FROM user ";
-        System.out.println(sql);
-        ResultSet rs = crude.exeSelect(sql);  
-        ArrayList<User> maliste =  new ArrayList<User>();
-        while(rs.next()){
-            User user = new User( rs.getInt(1), rs.getString(2), rs.getString(3)  ) ;
-            maliste.add(user);  
-        }
-        return maliste;
-        }catch (Exception ex){
-            System.err.println(ex.getMessage());
-            return null;            
+    public List<User> getAll() {
+    try {
+            String sql = "SELECT * FROM user";
+            ResultSet rs = crude.exeRead(sql);
+            List<User> liste = new ArrayList<User>();
+            while (rs.next()) {
+                User user = new User();
+                user.setId(rs.getInt(1));
+                user.setFirstname(rs.getString(2));
+                user.setLastname(rs.getString(3));
+                user.setLogin(rs.getString(4));
+                user.setPwd(rs.getString(5));
+               
+                liste.add(user);
             }
+            return liste;
+        } catch (SQLException ex) {
+                System.err.println(ex.getMessage());
+             JOptionPane.showMessageDialog(null, "Erreur AdministratorDAO ", "Erreur ", JOptionPane.ERROR_MESSAGE);
+
+            return null;
         }
+    }
 
   public User findByLoginPwd(String login, String pwd){
       User user=null;

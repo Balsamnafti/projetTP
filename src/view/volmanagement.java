@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author balsa
@@ -145,7 +147,17 @@ public class volmanagement extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        chargerDonneesJTable2();
+    }
+        private void chargerDonneesJTable2() {
+             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+             model.setRowCount(0);
+        Iterable<Object[]> dataList;
+              for (Object[] data : dataList) {
+                   model.addRow(data); // Ajouter chaque ligne de données dans le jTable2
+    }
+}
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

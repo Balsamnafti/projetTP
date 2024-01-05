@@ -6,6 +6,8 @@ package view;
 
 import Controller.UserController;
 import Model.User;
+import com.sun.jdi.connect.spi.Connection;
+import configs.MyConnexion;
 
 /**
  *
@@ -16,9 +18,13 @@ public class Auth extends javax.swing.JFrame {
     /**
      * Creates new form Auth
      */
-    public Auth() {
+     
+         
+    
+   public Auth() {
         initComponents();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -237,6 +243,8 @@ public class Auth extends javax.swing.JFrame {
           System.out.println(" User not found!");
       }else{
           System.out.println("User found!");
+          this.setVisible(false);
+          new ajoutvol().setVisible(true);
       }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -290,4 +298,6 @@ public class Auth extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField login;
     // End of variables declaration//GEN-END:variables
+
+   
 }

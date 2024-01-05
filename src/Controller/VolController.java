@@ -4,7 +4,9 @@
  */
 package Controller;
 import Model.vol;
+import java.time.LocalTime;
     import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,26 +15,27 @@ import java.util.List;
  */
 
 public class VolController {
-    private List<vol> vols;
 
-    public volController {
-        this.vols = new ArrayList<>();
+    private ArrayList<vol> vols; 
+
+    public VolController() {
+        vols = new ArrayList<>(); // Initialisation de la liste des vols
     }
 
-    public void addVol(vol vol) {
-        vol.add(vol);
+    // Méthode pour ajouter un vol à la liste
+    public void ajouterVol(String numvol, String aerdepart, String aerarrivee, Date datedep, Date datearr, LocalTime heureDepart, LocalTime heureArrivee) {
+        vol newVol = new vol(numvol, aerdepart, aerarrivee, datedep, datearr, heureDepart, heureArrivee);
+        vols.add(newVol); // Ajout du vol à la liste
     }
 
-    public vol getVolById(int id) {
-        for (vol vol : vols) {
-            if (id != vols.getId()) {
-            } else {
-                return vol;
-            }
-        }
-        return null;
+    // Méthode pour récupérer tous les vols
+    public ArrayList<vol> getVols() {
+        return vols;
     }
-    public void deleteVol(int id) {
-    vols.removeIf(vol -> vol.getId() == id);
-}
+
+    // Méthode pour supprimer un vol de la liste
+    public void supprimerVol(vol vol) {
+        vols.remove(vol);
+    }
+
 }

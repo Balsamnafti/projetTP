@@ -4,6 +4,9 @@
  */
 package view;
 
+import Controller.VolController;
+import Model.vol;
+
 /**
  *
  * @author balsa
@@ -107,6 +110,11 @@ public class ajoutvol extends javax.swing.JFrame {
         });
 
         jButton2.setText("Annuler");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Heure départ :");
         jLabel7.setMaximumSize(new java.awt.Dimension(70, 16));
@@ -240,12 +248,42 @@ public class ajoutvol extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    String numeroVol = jTextField1.getText();
+    String aeroportDepart = jTextField2.getText();
+    String aeroportArrivee = jTextField3.getText();
+    String dateDepart = jTextField4.getText();
+    String dateArrivee = jTextField5.getText();
+    String heureDepart = jTextField6.getText();
+    String heureArrivee = jTextField7.getText();
+       
+    
+   VolController volC = new VolController();
+   vol newflight = new vol(numeroVol, aeroportDepart,aeroportArrivee,dateDepart,dateArrivee,heureDepart,heureArrivee);
+   volC.insert(newflight)
+    
+    
+    System.out.println("Numéro de Vol : " + numeroVol);
+    System.out.println("Aéroport de Départ : " + aeroportDepart);
+    System.out.println("Aéroport d'Arrivée : " + aeroportArrivee);
+    System.out.println("Date de Départ : " + dateDepart);
+    System.out.println("Date d'Arrivée : " + dateArrivee);
+    System.out.println("Heure de Départ : " + heureDepart);
+    System.out.println("Heure d'Arrivée : " + heureArrivee);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    jTextField1.setText(""); // Numéro Vol
+    jTextField2.setText(""); // Aéroport de Départ
+    jTextField3.setText(""); // Aéroport d'Arrivée
+    jTextField4.setText(""); // Date de Départ
+    jTextField5.setText(""); // Date d'Arrivée
+    jTextField6.setText(""); // Heure de Départ
+    jTextField7.setText(""); // Heure d'Arrivée
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -14,7 +14,7 @@ import java.sql.SQLException;
  */
 public class MyConnexion {
       
-    private String url="jdbc:mysql://localhost:8080/gl4_db";
+    private String url="jdbc:mysql://localhost:3306/gl4_db";
     private String login="root";
     private String pwd="";
     
